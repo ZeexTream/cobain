@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightPath — Persiapan UTBK</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --blue-950: #172554;
+  --cyan: #06b6d4;
+  --sky: #0ea5e9;
+  --gold: #f59e0b;
+  --emerald: #10b981;
+  --rose: #f43f5e;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-blue: 0 8px 32px rgba(37,99,235,0.2);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--gray-50);
+  color: var(--gray-800);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(37,99,235,0.08);
+  padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 1.15rem;
+  color: var(--blue-700);
+  cursor: pointer;
+}
+.nav-logo {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--blue-600), var(--sky));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: white; font-weight: 900;
+}
+.nav-links {
+  display: flex; gap: 4px;
+}
+.nav-link {
+  padding: 7px 14px; border-radius: var(--radius-sm);
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--gray-600);
+  background: transparent; border: none;
+  cursor: pointer; transition: all 0.2s;
+}
+.nav-link:hover { background: var(--blue-50); color: var(--blue-600); }
+.nav-link.active { background: var(--blue-600); color: white; }
+.nav-right {
+  display: flex; align-items: center; gap: 12px;
+}
+.nav-points {
+  display: flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b40;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 0.8rem; font-weight: 700; color: #92400e;
+}
+.nav-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-500), var(--cyan));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 0.85rem;
+  cursor: pointer; border: 2px solid var(--blue-200);
+}
+
+/* ─── PAGES ─── */
+.page { display: none; padding-top: 64px; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ─── HOME PAGE ─── */
+.hero {
+  background: linear-gradient(160deg, var(--blue-950) 0%, var(--blue-800) 45%, var(--blue-600) 100%);
+  padding: 80px 24px 100px;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: var(--blue-100); padding: 7px 16px; border-radius: 20px;
+  font-size: 0.8rem; font-weight: 600; margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: white; line-height: 1.2;
+  margin-bottom: 18px;
+  max-width: 680px; margin-left: auto; margin-right: auto;
+}
+.hero h1 em { color: var(--cyan); font-style: italic; }
+.hero p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem; line-height: 1.7;
+  max-width: 520px; margin: 0 auto 36px;
+}
+.hero-ctas {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary {
+  background: white; color: var(--blue-700);
+  padding: 13px 28px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.btn-secondary {
+  background: rgba(255,255,255,0.12); color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 13px 28px; border-radius: var(--radius-md);
+  font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  transition: all 0.2s; backdrop-filter: blur(8px);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.2); }
+.hero-stats {
+  display: flex; gap: 40px; justify-content: center; margin-top: 56px;
+  flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem; color: white; font-weight: 400; line-height: 1;
+}
+.hero-stat-num span { color: var(--cyan); }
+.hero-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+
+/* Category Cards */
+.section { padding: 56px 24px; max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 32px; }
+.section-tag {
+  display: inline-block;
+  background: var(--blue-50); color: var(--blue-700);
+  font-size: 0.75rem; font-weight: 700; padding: 4px 12px;
+  border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem; color: var(--gray-900); line-height: 1.3;
+}
+.section-subtitle { color: var(--gray-500); font-size: 0.95rem; margin-top: 8px; }
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.cat-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 24px; cursor: pointer;
+  border: 1.5px solid var(--gray-100);
+  transition: all 0.25s;
+  position: relative; overflow: hidden;
+}
+.cat-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 80px; height: 80px;
+  border-radius: 0 var(--radius-lg) 0 80px;
+  opacity: 0.08;
+  transition: all 0.3s;
+}
+.cat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--blue-200); }
+.cat-card:hover::before { width: 120px; height: 120px; opacity: 0.12; }
+.cat-card[data-color="blue"]::before { background: var(--blue-600); }
+.cat-card[data-color="sky"]::before { background: var(--sky); }
+.cat-card[data-color="cyan"]::before { background: var(--cyan); }
+.cat-card[data-color="violet"]::before { background: #7c3aed; }
+.cat-card[data-color="emerald"]::before { background: var(--emerald); }
+.cat-card[data-color="rose"]::before { background: var(--rose); }
+.cat-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 14px;
+}
+.cat-card[data-color="blue"] .cat-icon { background: #eff6ff; }
+.cat-card[data-color="sky"] .cat-icon { background: #f0f9ff; }
+.cat-card[data-color="cyan"] .cat-icon { background: #ecfeff; }
+.cat-card[data-color="violet"] .cat-icon { background: #f5f3ff; }
+.cat-card[data-color="emerald"] .cat-icon { background: #ecfdf5; }
+.cat-card[data-color="rose"] .cat-icon { background: #fff1f2; }
+.cat-name { font-weight: 700; font-size: 0.95rem; color: var(--gray-800); margin-bottom: 4px; }
+.cat-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; margin-bottom: 14px; }
+.cat-meta {
+  display: flex; align-items: center; gap: 12px;
+}
+.cat-count {
+  font-size: 0.78rem; font-weight: 600; color: var(--gray-400);
+  display: flex; align-items: center; gap: 4px;
+}
+.cat-diff {
+  font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+}
+.diff-mudah { background: #ecfdf5; color: #065f46; }
+.diff-sedang { background: #fef3c7; color: #92400e; }
+.diff-sulit { background: #fff1f2; color: #9f1239; }
+
+/* Progress mini bar */
+.cat-progress-wrap { height: 4px; background: var(--gray-100); border-radius: 4px; margin-top: 12px; }
+.cat-progress-bar { height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--blue-500), var(--sky)); }
+
+/* ─── QUIZ PAGE ─── */
+.quiz-container { max-width: 780px; margin: 0 auto; padding: 32px 24px 80px; }
+.quiz-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
+}
+.back-btn {
+  width: 38px; height: 38px; border-radius: var(--radius-sm);
+  background: white; border: 1.5px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem; color: var(--gray-600);
+  transition: all 0.2s;
+}
+.back-btn:hover { background: var(--blue-50); border-color: var(--blue-300); color: var(--blue-600); }
+.quiz-meta { flex: 1; }
+.quiz-category-label {
+  font-size: 0.75rem; font-weight: 700; color: var(--blue-600);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.quiz-title-text { font-weight: 800; font-size: 1.05rem; color: var(--gray-800); }
+.quiz-timer {
+  display: flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+  color: white; padding: 8px 16px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 1rem; box-shadow: var(--shadow-blue);
+  min-width: 80px; justify-content: center;
+}
+.quiz-timer.warning { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.progress-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+}
+.q-progress {
+  flex: 1; height: 6px; background: var(--gray-200); border-radius: 6px; overflow: hidden;
+}
+.q-progress-fill {
+  height: 6px; background: linear-gradient(90deg, var(--blue-500), var(--cyan));
+  border-radius: 6px; transition: width 0.4s ease;
+}
+.q-counter { font-size: 0.82rem; font-weight: 600; color: var(--gray-500); white-space: nowrap; }
+.question-card {
+  background: white; border-radius: var(--radius-xl);
+  padding: 32px; box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--gray-100); margin-bottom: 16px;
+}
+.question-difficulty-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 10px; margin-bottom: 14px;
+}
+.question-text {
+  font-size: 1rem; line-height: 1.75; color: var(--gray-800);
+  font-weight: 500; margin-bottom: 8px;
+}
+.question-passage {
+  background: var(--blue-50); border-left: 3px solid var(--blue-400);
+  padding: 14px 18px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.88rem; line-height: 1.75; color: var(--gray-700);
+  margin-bottom: 20px; font-style: italic;
+}
+.options-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.option-btn {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 18px; border-radius: var(--radius-md);
+  border: 1.5px solid var(--gray-200);
+  background: white; cursor: pointer; text-align: left;
+  transition: all 0.2s; font-family: var(--font-body);
+  font-size: 0.9rem; color: var(--gray-700);
+}
+.option-btn:hover:not(:disabled) { border-color: var(--blue-400); background: var(--blue-50); color: var(--blue-700); }
+.option-btn.selected { border-color: var(--blue-500); background: var(--blue-50); color: var(--blue-700); }
+.option-btn.correct { border-color: var(--emerald); background: #ecfdf5; color: #065f46; }
+.option-btn.wrong { border-color: var(--rose); background: #fff1f2; color: #9f1239; }
+.option-btn:disabled { cursor: default; }
+.option-label {
+  width: 28px; height: 28px; min-width: 28px;
+  border-radius: 50%; border: 1.5px solid var(--gray-300);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.8rem; color: var(--gray-500);
+  transition: all 0.2s;
+}
+.option-btn.selected .option-label { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+.option-btn.correct .option-label { background: var(--emerald); border-color: var(--emerald); color: white; }
+.option-btn.wrong .option-label { background: var(--rose); border-color: var(--rose); color: white; }
+.option-text { flex: 1; line-height: 1.6; padding-top: 3px; }
+
+.explanation-card {
+  background: white; border-radius: var(--radius-xl);
+  padding: 24px; box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--blue-100);
+  margin-bottom: 16px; display: none;
+}
+.explanation-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.explanation-icon {
+  width: 32px; height: 32px; border-radius: var(--radius-sm);
+  background: var(--blue-100); display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+}
+.explanation-title { font-weight: 700; color: var(--blue-800); font-size: 0.9rem; }
+.explanation-text { font-size: 0.88rem; line-height: 1.75; color: var(--gray-600); }
+
+.quiz-actions { display: flex; gap: 10px; justify-content: space-between; align-items: center; }
+.btn-next {
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+  color: white; padding: 12px 28px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.9rem; border: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: var(--shadow-blue);
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-next:hover { transform: translateY(-1px); }
+.btn-next:disabled { opacity: 0.4; cursor: default; transform: none; }
+.btn-bookmark {
+  width: 42px; height: 42px; border-radius: var(--radius-sm);
+  background: white; border: 1.5px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1.1rem; transition: all 0.2s;
+}
+.btn-bookmark:hover { border-color: var(--gold); background: #fef3c7; }
+.btn-bookmark.bookmarked { border-color: var(--gold); background: #fef3c7; }
+
+/* ─── RESULT ─── */
+.result-container { max-width: 600px; margin: 0 auto; padding: 32px 24px 80px; text-align: center; }
+.result-ring {
+  width: 140px; height: 140px; margin: 0 auto 28px;
+  position: relative;
+}
+.result-ring svg { transform: rotate(-90deg); }
+.result-score-text {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.result-score-num {
+  font-family: var(--font-display); font-size: 2.2rem; color: var(--blue-700); line-height: 1;
+}
+.result-score-label { font-size: 0.72rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; }
+.result-title { font-family: var(--font-display); font-size: 1.8rem; color: var(--gray-900); margin-bottom: 8px; }
+.result-sub { color: var(--gray-500); font-size: 0.9rem; margin-bottom: 32px; }
+.result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.result-stat-card {
+  background: white; border-radius: var(--radius-md); padding: 16px;
+  border: 1.5px solid var(--gray-100); text-align: center;
+}
+.result-stat-num { font-weight: 800; font-size: 1.5rem; line-height: 1; }
+.result-stat-num.green { color: var(--emerald); }
+.result-stat-num.red { color: var(--rose); }
+.result-stat-num.blue { color: var(--blue-600); }
+.result-stat-label { font-size: 0.75rem; color: var(--gray-500); margin-top: 4px; }
+.badge-earned {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1.5px solid #f59e0b40;
+  border-radius: var(--radius-lg); padding: 18px 24px;
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 24px; text-align: left;
+}
+.badge-icon { font-size: 2rem; }
+.badge-info h4 { font-weight: 700; color: #92400e; font-size: 0.95rem; }
+.badge-info p { font-size: 0.8rem; color: #b45309; }
+.result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-redo {
+  background: white; color: var(--blue-700);
+  border: 1.5px solid var(--blue-200); padding: 12px 24px;
+  border-radius: var(--radius-md); font-weight: 700; font-size: 0.88rem;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-redo:hover { background: var(--blue-50); }
+.btn-result-primary {
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+  color: white; padding: 12px 24px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.88rem; border: none; cursor: pointer;
+  transition: all 0.2s; box-shadow: var(--shadow-blue);
+}
+.btn-result-primary:hover { transform: translateY(-1px); }
+
+/* ─── FLASHCARD ─── */
+.flash-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+.flash-cats {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+}
+.flash-cat-btn {
+  padding: 7px 16px; border-radius: 20px;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer;
+  border: 1.5px solid var(--gray-200); background: white; color: var(--gray-600);
+  transition: all 0.2s;
+}
+.flash-cat-btn.active { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+.flash-cat-btn:hover:not(.active) { border-color: var(--blue-300); color: var(--blue-600); background: var(--blue-50); }
+.flash-card-area { perspective: 1200px; margin-bottom: 24px; }
+.flash-card {
+  width: 100%; max-width: 600px; margin: 0 auto;
+  height: 300px; cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.flash-card.flipped { transform: rotateY(180deg); }
+.flash-front, .flash-back {
+  position: absolute; inset: 0;
+  border-radius: var(--radius-xl);
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 32px; text-align: center;
+}
+.flash-front {
+  background: linear-gradient(145deg, var(--blue-700), var(--blue-900));
+  box-shadow: 0 12px 40px rgba(30,64,175,0.3);
+}
+.flash-back {
+  background: white;
+  border: 1.5px solid var(--blue-100);
+  box-shadow: var(--shadow-lg);
+  transform: rotateY(180deg);
+}
+.flash-hint {
+  position: absolute; bottom: 16px;
+  font-size: 0.72rem; font-weight: 600; opacity: 0.6; letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.flash-front .flash-hint { color: white; }
+.flash-back .flash-hint { color: var(--gray-400); }
+.flash-front-label {
+  font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
+}
+.flash-front-text {
+  font-family: var(--font-display); font-size: 1.35rem; color: white; line-height: 1.4;
+}
+.flash-back-label {
+  font-size: 0.72rem; font-weight: 700; color: var(--blue-400);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;
+}
+.flash-back-text {
+  font-size: 0.92rem; color: var(--gray-700); line-height: 1.7;
+}
+.flash-nav-row {
+  display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px;
+}
+.flash-nav-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: white; border: 1.5px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem; color: var(--gray-600);
+  transition: all 0.2s;
+}
+.flash-nav-btn:hover { background: var(--blue-50); border-color: var(--blue-300); color: var(--blue-600); }
+.flash-counter-txt { font-size: 0.85rem; font-weight: 600; color: var(--gray-500); }
+.flash-actions-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-mastered {
+  background: #ecfdf5; color: #065f46; border: 1.5px solid #a7f3d0;
+  padding: 10px 20px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+}
+.btn-mastered.done { background: var(--emerald); color: white; border-color: var(--emerald); }
+.btn-review {
+  background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a;
+  padding: 10px 20px; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+}
+.flash-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px; margin-top: 32px;
+}
+.flash-mini-card {
+  background: white; border-radius: var(--radius-md);
+  border: 1.5px solid var(--gray-100); padding: 16px;
+  cursor: pointer; transition: all 0.2s; position: relative;
+}
+.flash-mini-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-200); }
+.flash-mini-card.mastered { border-color: var(--emerald); }
+.flash-mini-q { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); line-height: 1.5; }
+.flash-mini-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  padding: 2px 8px; border-radius: 10px; margin-top: 8px;
+}
+.flash-mini-mastered-badge {
+  position: absolute; top: 10px; right: 10px;
+  width: 20px; height: 20px; background: var(--emerald);
+  border-radius: 50%; display: none; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: white;
+}
+.flash-mini-card.mastered .flash-mini-mastered-badge { display: flex; }
+
+/* ─── PROGRESS PAGE ─── */
+.progress-container { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 28px; }
+.stat-card {
+  background: white; border-radius: var(--radius-lg); padding: 20px;
+  border: 1.5px solid var(--gray-100); box-shadow: var(--shadow-sm);
+}
+.stat-icon { font-size: 1.5rem; margin-bottom: 10px; }
+.stat-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--gray-900); line-height: 1; }
+.stat-label { font-size: 0.78rem; color: var(--gray-500); margin-top: 4px; font-weight: 600; }
+.stat-change { font-size: 0.75rem; color: var(--emerald); font-weight: 600; margin-top: 2px; }
+
+.progress-section-title {
+  font-weight: 800; font-size: 1rem; color: var(--gray-800); margin-bottom: 14px;
+  padding-bottom: 8px; border-bottom: 1.5px solid var(--gray-100);
+}
+.subject-bars { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.subject-bar-row { }
+.subject-bar-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
+}
+.subject-bar-name { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); }
+.subject-bar-pct { font-size: 0.82rem; font-weight: 700; color: var(--blue-600); }
+.subject-bar-track { height: 8px; background: var(--gray-100); border-radius: 8px; overflow: hidden; }
+.subject-bar-fill { height: 8px; border-radius: 8px; background: linear-gradient(90deg, var(--blue-500), var(--sky)); transition: width 1s ease; }
+
+.badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px; }
+.badge-card {
+  background: white; border-radius: var(--radius-lg); padding: 20px; text-align: center;
+  border: 1.5px solid var(--gray-100);
+  transition: all 0.25s;
+}
+.badge-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.badge-card.locked { opacity: 0.45; filter: grayscale(1); }
+.badge-card-icon { font-size: 2rem; margin-bottom: 8px; }
+.badge-card-name { font-size: 0.8rem; font-weight: 700; color: var(--gray-800); }
+.badge-card-desc { font-size: 0.72rem; color: var(--gray-500); margin-top: 3px; }
+
+.history-list { display: flex; flex-direction: column; gap: 10px; }
+.history-item {
+  background: white; border-radius: var(--radius-md); padding: 16px 20px;
+  border: 1.5px solid var(--gray-100); display: flex;
+  align-items: center; gap: 16px;
+}
+.history-icon {
+  width: 38px; height: 38px; border-radius: var(--radius-sm);
+  background: var(--blue-50); display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.history-info { flex: 1; }
+.history-subject { font-weight: 700; font-size: 0.88rem; color: var(--gray-800); }
+.history-meta { font-size: 0.78rem; color: var(--gray-500); margin-top: 2px; }
+.history-score {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 400;
+}
+.history-score.high { color: var(--emerald); }
+.history-score.mid { color: var(--gold); }
+.history-score.low { color: var(--rose); }
+
+/* ─── LEADERBOARD ─── */
+.lb-list { display: flex; flex-direction: column; gap: 8px; }
+.lb-item {
+  background: white; border-radius: var(--radius-md); padding: 14px 18px;
+  border: 1.5px solid var(--gray-100); display: flex; align-items: center; gap: 14px;
+  transition: all 0.2s;
+}
+.lb-item:hover { box-shadow: var(--shadow-sm); }
+.lb-item.top1 { border-color: #f59e0b40; background: linear-gradient(135deg, #fef9ec, #fff); }
+.lb-rank {
+  width: 28px; font-family: var(--font-display); font-size: 1.1rem;
+  color: var(--gray-400); text-align: center;
+}
+.lb-rank.gold { color: #f59e0b; }
+.lb-rank.silver { color: #94a3b8; }
+.lb-rank.bronze { color: #b45309; }
+.lb-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-400), var(--sky));
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 0.82rem;
+}
+.lb-name { flex: 1; font-weight: 600; font-size: 0.9rem; color: var(--gray-800); }
+.lb-pts { font-weight: 800; font-size: 0.88rem; color: var(--blue-600); }
+
+/* ─── DAILY CHALLENGE ─── */
+.daily-challenge-banner {
+  background: linear-gradient(135deg, var(--blue-800), var(--blue-600));
+  border-radius: var(--radius-xl); padding: 28px 32px;
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 32px; position: relative; overflow: hidden;
+}
+.daily-challenge-banner::after {
+  content: '🎯'; font-size: 5rem;
+  position: absolute; right: 28px; top: 50%; transform: translateY(-50%) rotate(10deg);
+  opacity: 0.25;
+}
+.dc-badge {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+  color: white; padding: 5px 12px; border-radius: 14px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; margin-bottom: 8px; display: inline-block;
+}
+.dc-title { font-family: var(--font-display); font-size: 1.3rem; color: white; margin-bottom: 4px; }
+.dc-desc { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.dc-cta {
+  background: white; color: var(--blue-700); padding: 11px 22px;
+  border-radius: var(--radius-md); font-weight: 700; font-size: 0.85rem;
+  border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap; margin-left: auto;
+}
+.dc-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+/* ─── TOAST ─── */
+.toast {
+  position: fixed; bottom: 24px; right: 24px; z-index: 200;
+  background: var(--gray-900); color: white;
+  padding: 14px 20px; border-radius: var(--radius-md);
+  font-size: 0.875rem; font-weight: 600;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  display: flex; align-items: center; gap: 10px;
+  max-width: 320px;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast-icon { font-size: 1.1rem; }
+
+/* ─── MODALS / OVERLAYS ─── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(4px); z-index: 150;
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  background: white; border-radius: var(--radius-xl);
+  max-width: 460px; width: 100%; padding: 32px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+  animation: modalIn 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes modalIn {
+  from { transform: scale(0.94) translateY(12px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+.modal h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 8px; }
+.modal p { color: var(--gray-500); font-size: 0.88rem; margin-bottom: 24px; line-height: 1.6; }
+.modal-actions { display: flex; gap: 10px; }
+.btn-modal-cancel {
+  flex: 1; padding: 12px; border-radius: var(--radius-md);
+  background: white; border: 1.5px solid var(--gray-200);
+  font-weight: 600; font-size: 0.88rem; cursor: pointer; color: var(--gray-600);
+}
+.btn-modal-confirm {
+  flex: 1; padding: 12px; border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
+  color: white; border: none; font-weight: 700; font-size: 0.88rem; cursor: pointer;
+}
+
+/* ─── MISC ─── */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 10px;
+}
+.chip-blue { background: var(--blue-50); color: var(--blue-700); }
+.chip-gold { background: #fef3c7; color: #92400e; }
+.chip-green { background: #ecfdf5; color: #065f46; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-stats { gap: 24px; }
+  .quiz-timer { font-size: 0.85rem; padding: 6px 12px; }
+  .daily-challenge-banner { flex-direction: column; }
+  .dc-cta { width: 100%; margin-left: 0; }
+  .result-grid { grid-template-columns: 1fr 1fr; }
+  .flash-card { height: 240px; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.4s ease both; }
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.1s; }
+.delay-3 { animation-delay: 0.15s; }
+.delay-4 { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-logo">B</div>
+    BrightPath
+  </div>
+  <div class="nav-links">
+    <button class="nav-link active" id="nav-home" onclick="showPage('home')">Home</button>
+    <button class="nav-link" id="nav-latihan" onclick="showPage('latihan')">Latihan Soal</button>
+    <button class="nav-link" id="nav-flashcard" onclick="showPage('flashcard')">Flashcard</button>
+    <button class="nav-link" id="nav-progress" onclick="showPage('progress')">Progress</button>
+  </div>
+  <div class="nav-right">
+    <div class="nav-points">⭐ <span id="total-points">1240</span> pts</div>
+    <div class="nav-avatar" onclick="showPage('progress')">AS</div>
+  </div>
+</nav>
+
+<!-- ══════════════ HOME PAGE ══════════════ -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-badge">🚀 Persiapan UTBK 2025 — Mulai Sekarang</div>
+    <h1>Raih PTN Impianmu dengan<br><em>Latihan Cerdas</em> Setiap Hari</h1>
+    <p>Platform belajar interaktif dengan ribuan soal UTBK standar SNBT, flashcard pintar, dan tracking progres yang membuatmu makin fokus.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="showPage('latihan')">🎯 Mulai Latihan</button>
+      <button class="btn-secondary" onclick="showPage('flashcard')">📚 Lihat Flashcard</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">2<span>,400+</span></div><div class="hero-stat-label">Bank Soal</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">6<span> Materi</span></div><div class="hero-stat-label">Kategori UTBK</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">480<span>+</span></div><div class="hero-stat-label">Flashcard</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">98<span>%</span></div><div class="hero-stat-label">Kepuasan Siswa</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <!-- Daily Challenge -->
+    <div class="daily-challenge-banner animate-in">
+      <div>
+        <div class="dc-badge">🔥 Daily Challenge</div>
+        <div class="dc-title">Soal Hari Ini Sudah Siap!</div>
+        <div class="dc-desc">5 soal TPS pilihan · Bonus 3× poin jika selesai sebelum pukul 22.00</div>
+      </div>
+      <button class="dc-cta" onclick="startQuiz('tps-pu')">Kerjakan Sekarang →</button>
+    </div>
+
+    <div class="section-header animate-in delay-1">
+      <div class="section-tag">Pilih Materi</div>
+      <div class="section-title">Latihan Berdasarkan Kategori UTBK</div>
+      <div class="section-subtitle">Pilih materi yang ingin kamu kuasai, dari TPS hingga Penalaran Matematika</div>
+    </div>
+
+    <div class="categories-grid">
+      <div class="cat-card animate-in delay-1" data-color="blue" onclick="startQuiz('tps-pu')">
+        <div class="cat-icon">🧠</div>
+        <div class="cat-name">Penalaran Umum</div>
+        <div class="cat-desc">Logika, analisis argumen, dan pola penalaran induktif-deduktif</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 420 soal</div>
+          <div class="cat-diff diff-sedang">Sedang</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:62%"></div></div>
+      </div>
+      <div class="cat-card animate-in delay-2" data-color="sky" onclick="startQuiz('tps-pbm')">
+        <div class="cat-icon">📖</div>
+        <div class="cat-name">Pemahaman Bacaan & Menulis</div>
+        <div class="cat-desc">Teks wacana, ide pokok, inferensi, dan penulisan efektif</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 380 soal</div>
+          <div class="cat-diff diff-mudah">Mudah</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:45%"></div></div>
+      </div>
+      <div class="cat-card animate-in delay-3" data-color="cyan" onclick="startQuiz('tps-pk')">
+        <div class="cat-icon">🔢</div>
+        <div class="cat-name">Pengetahuan Kuantitatif</div>
+        <div class="cat-desc">Aritmetika, aljabar dasar, relasi, dan interpretasi data</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 360 soal</div>
+          <div class="cat-diff diff-sedang">Sedang</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:38%"></div></div>
+      </div>
+      <div class="cat-card animate-in delay-1" data-color="violet" onclick="startQuiz('litbindo')">
+        <div class="cat-icon">🇮🇩</div>
+        <div class="cat-name">Literasi Bahasa Indonesia</div>
+        <div class="cat-desc">Membaca kritis teks sastra, ilmiah, dan informasional dalam bahasa Indonesia</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 310 soal</div>
+          <div class="cat-diff diff-mudah">Mudah</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:70%"></div></div>
+      </div>
+      <div class="cat-card animate-in delay-2" data-color="emerald" onclick="startQuiz('litbingg')">
+        <div class="cat-icon">🌐</div>
+        <div class="cat-name">Literasi Bahasa Inggris</div>
+        <div class="cat-desc">Reading comprehension, vocabulary in context, dan analisis teks berbahasa Inggris</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 290 soal</div>
+          <div class="cat-diff diff-sulit">Sulit</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:28%"></div></div>
+      </div>
+      <div class="cat-card animate-in delay-3" data-color="rose" onclick="startQuiz('penmat')">
+        <div class="cat-icon">📐</div>
+        <div class="cat-name">Penalaran Matematika</div>
+        <div class="cat-desc">Pemecahan masalah kontekstual, geometri, statistika, dan pola bilangan</div>
+        <div class="cat-meta">
+          <div class="cat-count">📄 340 soal</div>
+          <div class="cat-diff diff-sulit">Sulit</div>
+        </div>
+        <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:22%"></div></div>
+      </div>
+    </div>
+
+    <!-- Leaderboard Preview -->
+    <div style="margin-top:48px">
+      <div class="section-header">
+        <div class="section-tag">🏆 Klasemen</div>
+        <div class="section-title">Top Learners Minggu Ini</div>
+      </div>
+      <div class="lb-list">
+        <div class="lb-item top1">
+          <div class="lb-rank gold">🥇</div>
+          <div class="lb-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">MH</div>
+          <div class="lb-name">Muhamad Haiz</div>
+          <div class="lb-pts">4,820 pts</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-rank silver">🥈</div>
+          <div class="lb-avatar" style="background:linear-gradient(135deg,#a78bfa,#6366f1)">MH</div>
+          <div class="lb-name">Muhamad Haiz</div>
+          <div class="lb-pts">4,210 pts</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-rank bronze">🥉</div>
+          <div class="lb-avatar" style="background:linear-gradient(135deg,#34d399,#0ea5e9)">MH</div>
+          <div class="lb-name">Muhamad Haiz</div>
+          <div class="lb-pts">3,980 pts</div>
+        </div>
+        <div class="lb-item">
+          <div class="lb-rank" style="color:var(--gray-400)">4</div>
+          <div class="lb-avatar" style="background:linear-gradient(135deg,#fb7185,#f43f5e)">MH</div>
+          <div class="lb-name">Muhamad Haiz</div>
+          <div class="lb-pts">3,750 pts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LATIHAN PAGE ══════════════ -->
+<div class="page" id="page-latihan">
+  <!-- Category Select -->
+  <div class="section" id="latihan-select-screen">
+    <div class="section-header animate-in">
+      <div class="section-tag">Latihan Soal</div>
+      <div class="section-title">Pilih Kategori & Mode</div>
+      <div class="section-subtitle">Mode Latihan untuk belajar santai · Mode Simulasi untuk ujian penuh</div>
+    </div>
+    <div class="categories-grid" id="latihan-cats"></div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div class="quiz-container" id="quiz-screen" style="display:none">
+    <div class="quiz-header">
+      <button class="back-btn" onclick="confirmQuit()">←</button>
+      <div class="quiz-meta">
+        <div class="quiz-category-label" id="quiz-cat-label">TPS — Penalaran Umum</div>
+        <div class="quiz-title-text" id="quiz-mode-label">Mode Latihan</div>
+      </div>
+      <div class="quiz-timer" id="quiz-timer">⏱ 00:00</div>
+    </div>
+    <div class="progress-row">
+      <div class="q-progress"><div class="q-progress-fill" id="q-progress-fill" style="width:10%"></div></div>
+      <div class="q-counter" id="q-counter">1 / 10</div>
+    </div>
+    <div class="question-card">
+      <div class="question-difficulty-badge diff-sedang" id="q-difficulty">⚡ Sedang</div>
+      <div class="question-passage" id="q-passage" style="display:none"></div>
+      <div class="question-text" id="q-text">Pertanyaan akan muncul di sini.</div>
+      <div class="options-list" id="q-options"></div>
+    </div>
+    <div class="explanation-card" id="explanation-card">
+      <div class="explanation-header">
+        <div class="explanation-icon">💡</div>
+        <div class="explanation-title">Pembahasan</div>
+      </div>
+      <div class="explanation-text" id="explanation-text"></div>
+    </div>
+    <div class="quiz-actions">
+      <button class="btn-bookmark" id="btn-bookmark" onclick="toggleBookmark()" title="Bookmark soal ini">🔖</button>
+      <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>Lanjut →</button>
+    </div>
+  </div>
+
+  <!-- Result Screen -->
+  <div class="result-container" id="result-screen" style="display:none">
+    <div class="result-ring">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="58" fill="none" stroke="#e2e8f0" stroke-width="10"/>
+        <circle cx="70" cy="70" r="58" fill="none" stroke="url(#rg)" stroke-width="10"
+          stroke-linecap="round" id="result-circle" stroke-dasharray="364" stroke-dashoffset="364"/>
+        <defs><linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3b82f6"/>
+          <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="result-score-text">
+        <div class="result-score-num" id="result-pct">0%</div>
+        <div class="result-score-label">Skor</div>
+      </div>
+    </div>
+    <div class="result-title" id="result-title">Luar Biasa!</div>
+    <div class="result-sub" id="result-sub">Kamu menyelesaikan sesi latihan</div>
+    <div class="result-grid">
+      <div class="result-stat-card">
+        <div class="result-stat-num green" id="r-correct">0</div>
+        <div class="result-stat-label">✅ Benar</div>
+      </div>
+      <div class="result-stat-card">
+        <div class="result-stat-num red" id="r-wrong">0</div>
+        <div class="result-stat-label">❌ Salah</div>
+      </div>
+      <div class="result-stat-card">
+        <div class="result-stat-num blue" id="r-time">0m</div>
+        <div class="result-stat-label">⏱ Waktu</div>
+      </div>
+    </div>
+    <div class="badge-earned" id="badge-earned" style="display:none">
+      <div class="badge-icon" id="badge-icon">🏅</div>
+      <div class="badge-info">
+        <h4 id="badge-name">Badge Diraih!</h4>
+        <p id="badge-desc">Kamu mendapatkan badge baru</p>
+      </div>
+    </div>
+    <div class="result-actions">
+      <button class="btn-redo" onclick="startQuiz(currentCategory)">🔄 Ulangi</button>
+      <button class="btn-redo" onclick="showPage('latihan')">← Pilih Materi Lain</button>
+      <button class="btn-result-primary" onclick="showPage('progress')">📊 Lihat Progress</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FLASHCARD PAGE ══════════════ -->
+<div class="page" id="page-flashcard">
+  <div class="flash-container">
+    <div class="section-header animate-in">
+      <div class="section-tag">Flashcard</div>
+      <div class="section-title">Hafal Konsep Penting</div>
+      <div class="section-subtitle">Klik kartu untuk membalik · tandai kartu yang sudah kamu kuasai</div>
+    </div>
+
+    <div class="flash-cats" id="flash-cats"></div>
+
+    <div class="flash-card-area">
+      <div class="flash-card" id="flash-card" onclick="flipCard()">
+        <div class="flash-front">
+          <div class="flash-front-label">Konsep</div>
+          <div class="flash-front-text" id="flash-front-text">Klik untuk memuat flashcard</div>
+          <div class="flash-hint">Klik untuk balik ↓</div>
+        </div>
+        <div class="flash-back">
+          <div class="flash-back-label">Penjelasan</div>
+          <div class="flash-back-text" id="flash-back-text">Penjelasan akan muncul di sini.</div>
+          <div class="flash-hint">Klik untuk balik ↑</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flash-nav-row">
+      <button class="flash-nav-btn" onclick="prevFlash()">←</button>
+      <div class="flash-counter-txt" id="flash-counter">1 / 10</div>
+      <button class="flash-nav-btn" onclick="nextFlash()">→</button>
+    </div>
+    <div class="flash-actions-row">
+      <button class="btn-mastered" id="btn-mastered" onclick="toggleMastered()">✓ Sudah Hafal</button>
+      <button class="btn-review" onclick="reviewCard()">🔁 Perlu Review</button>
+    </div>
+
+    <div style="margin-top:32px">
+      <div class="progress-section-title">Semua Kartu — <span id="flash-cat-label-mini">Penalaran Umum</span></div>
+      <div class="flash-grid" id="flash-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PROGRESS PAGE ══════════════ -->
+<div class="page" id="page-progress">
+  <div class="progress-container">
+    <div class="section-header animate-in">
+      <div class="section-tag">Progress Belajar</div>
+      <div class="section-title">Dashboard Pencapaianmu</div>
+    </div>
+
+    <div class="stats-grid animate-in">
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-num" id="stat-total-soal">47</div>
+        <div class="stat-label">Total Soal Dikerjakan</div>
+        <div class="stat-change">↑ +8 minggu ini</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-num" id="stat-avg-score">72%</div>
+        <div class="stat-label">Rata-rata Skor</div>
+        <div class="stat-change">↑ +5% dari kemarin</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-num">1,240</div>
+        <div class="stat-label">Total Poin</div>
+        <div class="stat-change">↑ +320 minggu ini</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Hari Beruntun</div>
+        <div class="stat-change">Streak terbaikmu!</div>
+      </div>
+    </div>
+
+    <div class="progress-section-title">Penguasaan per Materi</div>
+    <div class="subject-bars" id="subject-bars"></div>
+
+    <div class="progress-section-title">Badge & Pencapaian</div>
+    <div class="badges-grid" id="badges-grid"></div>
+
+    <div class="progress-section-title">Riwayat Latihan Terakhir</div>
+    <div class="history-list" id="history-list"></div>
+
+    <div style="margin-top:28px">
+      <div class="progress-section-title">🎓 Rekomendasi Materi</div>
+      <div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:var(--radius-lg);padding:20px 24px;border:1.5px solid var(--blue-100)">
+        <div style="font-weight:700;color:var(--blue-800);margin-bottom:8px">Fokus pada Literasi Bahasa Inggris & Penalaran Matematika</div>
+        <div style="font-size:0.85rem;color:var(--blue-600);line-height:1.6">Skor kamu di dua materi ini masih di bawah 40%. Kami rekomendasikan 15 menit latihan harian untuk kedua materi ini agar skormu meningkat signifikan sebelum UTBK.</div>
+        <button class="btn-next" style="margin-top:14px;padding:10px 20px;font-size:0.85rem" onclick="startQuiz('litbingg')">Latihan Sekarang →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL Quit Confirmation -->
+<div class="modal-overlay" id="quit-modal">
+  <div class="modal">
+    <h3>Keluar dari Latihan?</h3>
+    <p>Progres kamu di sesi ini tidak akan disimpan. Yakin ingin keluar?</p>
+    <div class="modal-actions">
+      <button class="btn-modal-cancel" onclick="closeModal('quit-modal')">Lanjutkan</button>
+      <button class="btn-modal-confirm" onclick="quitQuiz()">Ya, Keluar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div id="music-player" style="
+  position:fixed;bottom:24px;left:24px;z-index:199;
+  background:rgba(15,23,42,0.92);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:12px 16px;
+  display:flex;align-items:center;gap:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.35);
+  min-width:240px;max-width:280px;
+  transition:all 0.3s ease;
+">
+  <div id="yt-player-wrap" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;">
+    <div id="yt-player"></div>
+  </div>
+  <div id="music-art" style="
+    width:40px;height:40px;min-width:40px;border-radius:10px;
+    background:linear-gradient(135deg,#3b82f6,#06b6d4);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;position:relative;overflow:hidden;transition:border-radius 0.3s;
+  ">🎵<div id="music-pulse" style="position:absolute;inset:0;border-radius:10px;background:rgba(255,255,255,0.15);animation:mpulse 1.5s ease-in-out infinite;display:none;"></div>
+  </div>
+  <div style="flex:1;overflow:hidden;">
+    <div style="font-size:0.72rem;color:rgba(255,255,255,0.45);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Musik Belajar 🎧</div>
+    <div id="music-title" style="font-size:0.82rem;font-weight:700;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Plus Jakarta Sans',sans-serif;">Memuat lagu...</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px;">
+    <button id="music-toggle" onclick="toggleMusic()" style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:white;box-shadow:0 2px 8px rgba(59,130,246,0.4);transition:all 0.2s;">▶</button>
+    <button onclick="closePlayer()" style="width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:rgba(255,255,255,0.5);">✕</button>
+  </div>
+</div>
+<button id="music-reopen" onclick="reopenPlayer()" style="display:none;position:fixed;bottom:24px;left:24px;z-index:199;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);border:none;cursor:pointer;font-size:1.1rem;box-shadow:0 4px 16px rgba(59,130,246,0.4);">🎵</button>
+<style>
+@keyframes mpulse{0%,100%{opacity:0.15}50%{opacity:0.4}}
+@keyframes mspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon">🎉</span>
+  <span id="toast-msg">Selamat!</span>
+</div>
+
+<script>
+// ══════════════════════════════════════
+//  DATA
+// ══════════════════════════════════════
+const CATEGORIES = {
+  'tps-pu': { name: 'Penalaran Umum', color: 'blue', icon: '🧠', short: 'TPS — PU' },
+  'tps-pbm': { name: 'Pemahaman Bacaan & Menulis', color: 'sky', icon: '📖', short: 'TPS — PBM' },
+  'tps-pk': { name: 'Pengetahuan Kuantitatif', color: 'cyan', icon: '🔢', short: 'TPS — PK' },
+  'litbindo': { name: 'Literasi Bahasa Indonesia', color: 'violet', icon: '🇮🇩', short: 'Literasi BI' },
+  'litbingg': { name: 'Literasi Bahasa Inggris', color: 'emerald', icon: '🌐', short: 'Literasi Inggris' },
+  'penmat': { name: 'Penalaran Matematika', color: 'rose', icon: '📐', short: 'Penalaran Mat.' },
+};
+
+const QUESTION_BANK = {
+  'tps-pu': [
+    {
+      text: 'Jika semua kucing adalah hewan, dan beberapa hewan adalah pemangsa, maka kesimpulan yang PASTI benar adalah...',
+      options: ['Semua kucing adalah pemangsa','Beberapa kucing mungkin bukan hewan','Tidak semua hewan adalah kucing','Semua pemangsa adalah kucing','Beberapa pemangsa pasti adalah kucing'],
+      answer: 2, difficulty: 'sedang',
+      explanation: 'Dari pernyataan "semua kucing adalah hewan", kita tahu hewan adalah himpunan lebih besar dari kucing. Maka pernyataan yang pasti benar adalah "tidak semua hewan adalah kucing" (karena kucing hanya sebagian dari hewan). Opsi lain tidak bisa disimpulkan dengan pasti.'
+    },
+    {
+      text: 'Dalam sebuah perlombaan, Ali selalu menang melawan Budi, Budi selalu menang melawan Cici, dan Dedi selalu menang melawan Ali. Siapakah yang PASTI berada di peringkat kedua?',
+      options: ['Ali','Budi','Cici','Dedi','Tidak bisa ditentukan'],
+      answer: 0, difficulty: 'mudah',
+      explanation: 'Urutan dari tertinggi: Dedi > Ali > Budi > Cici. Dedi menang vs semua yang disebutkan. Ali menang vs Budi dan Cici, tapi kalah dari Dedi. Jadi Ali berada di peringkat kedua.'
+    },
+    {
+      text: 'Bacalah pola berikut: 3, 6, 11, 18, 27, ... Berapakah angka selanjutnya?',
+      options: ['36','38','39','40','42'],
+      answer: 1, difficulty: 'mudah',
+      explanation: 'Selisih antar suku: +3, +5, +7, +9, ... (bertambah 2 setiap kali). Selisih berikutnya adalah +11, sehingga 27 + 11 = 38.'
+    },
+    {
+      text: 'Sebuah toko memberikan diskon 20% untuk semua barang, kemudian memberikan diskon tambahan 10% dari harga setelah diskon pertama. Jika harga awal barang adalah Rp200.000, berapa harga akhirnya?',
+      options: ['Rp140.000','Rp144.000','Rp148.000','Rp150.000','Rp160.000'],
+      answer: 1, difficulty: 'sedang',
+      explanation: 'Harga setelah diskon 20%: 200.000 × 0,8 = Rp160.000. Harga setelah diskon tambahan 10%: 160.000 × 0,9 = Rp144.000.'
+    },
+    {
+      text: 'Lima orang (A, B, C, D, E) duduk dalam satu baris. A duduk di sebelah kiri B. C duduk paling kanan. D duduk di antara B dan C. Siapakah yang duduk paling kiri?',
+      options: ['A','B','C','D','E'],
+      answer: 4, difficulty: 'sedang',
+      explanation: 'Dari kondisi: A di kiri B, D antara B dan C (paling kanan). Susunan parsial: A - B - D - C. E tersisa dan harus ditempatkan. E tidak ada posisi yang disebutkan, sehingga E paling kiri: E - A - B - D - C.'
+    },
+  ],
+  'tps-pbm': [
+    {
+      passage: '"Perubahan iklim merupakan salah satu tantangan terbesar abad ini. Para ilmuwan telah memperingatkan bahwa kenaikan suhu global dapat menyebabkan berbagai dampak buruk, mulai dari naiknya permukaan laut hingga meningkatnya frekuensi bencana alam."',
+      text: 'Berdasarkan teks di atas, gagasan utama paragraf tersebut adalah...',
+      options: [
+        'Suhu global terus meningkat setiap tahun',
+        'Perubahan iklim adalah tantangan besar yang menimbulkan dampak buruk',
+        'Ilmuwan selalu memberikan peringatan tentang iklim',
+        'Permukaan laut terus naik akibat pemanasan global',
+        'Bencana alam semakin sering terjadi di seluruh dunia'
+      ],
+      answer: 1, difficulty: 'mudah',
+      explanation: 'Gagasan utama terletak pada kalimat pertama yang menyatakan perubahan iklim sebagai tantangan terbesar, kemudian diperkuat dengan kalimat penjelas berupa dampak-dampak buruknya.'
+    },
+    {
+      passage: '"Kebiasaan membaca buku terbukti meningkatkan kemampuan kognitif seseorang. Penelitian menunjukkan bahwa pembaca rutin memiliki kosakata yang lebih kaya, kemampuan berpikir kritis lebih baik, dan tingkat empati yang lebih tinggi dibanding yang jarang membaca."',
+      text: 'Manakah pernyataan yang TIDAK sesuai dengan isi teks?',
+      options: [
+        'Membaca meningkatkan kosakata',
+        'Pembaca rutin memiliki empati lebih tinggi',
+        'Membaca buku meningkatkan kemampuan kognitif',
+        'Jarang membaca menyebabkan kecerdasan menurun',
+        'Ada penelitian yang mendukung manfaat membaca'
+      ],
+      answer: 3, difficulty: 'sedang',
+      explanation: 'Teks hanya menyatakan perbedaan antara pembaca rutin dan jarang membaca dalam hal kosakata, berpikir kritis, dan empati. Teks tidak menyatakan bahwa jarang membaca menyebabkan kecerdasan menurun — ini merupakan inferensi berlebihan yang tidak didukung teks.'
+    },
+    {
+      text: 'Kalimat manakah yang menggunakan ejaan dan tanda baca yang BENAR sesuai PUEBI?',
+      options: [
+        'Ibu memasak nasi goreng, dan ayah mencuci piring.',
+        'Dia pergi ke-pasar untuk membeli sayur-mayur.',
+        'Kami akan berangkat pada hari Senin, 15 Januari 2024.',
+        'Para siswa-siswi sedang belajar didalam kelas.',
+        'Mereka berencana pergi ke jakarta besok pagi.'
+      ],
+      answer: 2, difficulty: 'sedang',
+      explanation: 'Pilihan C benar karena penulisan nama hari (Senin) diawali huruf kapital, nama bulan (Januari) diawali huruf kapital, dan penggunaan tanda koma sebelum tanggal sudah tepat sesuai PUEBI.'
+    },
+  ],
+  'tps-pk': [
+    {
+      text: 'Jika 3x + 7 = 22, maka nilai dari 6x − 4 adalah...',
+      options: ['20','22','24','26','28'],
+      answer: 3, difficulty: 'mudah',
+      explanation: 'Dari 3x + 7 = 22 → 3x = 15 → x = 5. Maka 6x − 4 = 6(5) − 4 = 30 − 4 = 26.'
+    },
+    {
+      text: 'Perhatikan dua pernyataan berikut:\nKolom A: Luas lingkaran dengan jari-jari 7 cm\nKolom B: Luas persegi dengan sisi 11 cm\nHubungan yang tepat antara Kolom A dan Kolom B adalah...',
+      options: [
+        'Kolom A > Kolom B',
+        'Kolom A < Kolom B',
+        'Kolom A = Kolom B',
+        'Hubungan tidak dapat ditentukan',
+        'Kolom A ≥ Kolom B'
+      ],
+      answer: 1, difficulty: 'sedang',
+      explanation: 'Luas lingkaran = π × 7² = 22/7 × 49 = 154 cm². Luas persegi = 11² = 121 cm². Karena 154 > 121, maka Kolom A > Kolom B. Jawaban A.'
+    },
+    {
+      text: 'Rata-rata nilai 5 siswa adalah 78. Jika nilai seorang siswa yang mendapat 60 diganti dengan siswa baru yang nilainya belum diketahui, rata-ratanya menjadi 80. Berapa nilai siswa baru tersebut?',
+      options: ['68','70','70','72','70'],
+      answer: 3, difficulty: 'sulit',
+      explanation: 'Total nilai awal = 5 × 78 = 390. Total nilai baru = 5 × 80 = 400. Selisih = 10. Nilai siswa baru = 60 + 10 = 70. Jawaban: 70.'
+    },
+  ],
+  'litbindo': [
+    {
+      passage: '"Novel Bumi Manusia karya Pramoedya Ananta Toer mengisahkan perjuangan Minke, seorang pemuda pribumi terdidik di masa kolonial Belanda. Melalui tokoh ini, Pramoedya menggambarkan benturan antara modernitas Eropa dan tradisi Jawa, serta ketidakadilan sistem kolonial yang membelenggu bangsa Indonesia."',
+      text: 'Nilai sosial yang dominan tergambar dalam teks di atas adalah...',
+      options: [
+        'Kesetiaan pada tradisi nenek moyang',
+        'Perjuangan melawan ketidakadilan kolonialisme',
+        'Kegagahan pemuda pribumi melawan Belanda',
+        'Pentingnya pendidikan bagi masyarakat Eropa',
+        'Keindahan budaya Jawa di masa penjajahan'
+      ],
+      answer: 1, difficulty: 'sedang',
+      explanation: 'Teks secara eksplisit menyebut "ketidakadilan sistem kolonial" dan "perjuangan Minke". Nilai sosial yang paling menonjol adalah perjuangan melawan ketidakadilan kolonialisme, bukan sekadar kesetiaan tradisi atau keindahan budaya.'
+    },
+    {
+      text: 'Kata "membelenggu" dalam kalimat "ketidakadilan sistem kolonial yang membelenggu bangsa Indonesia" memiliki makna...',
+      options: [
+        'Mengikat dengan rantai besi',
+        'Membatasi dan menghalangi kebebasan',
+        'Menghancurkan semua harapan',
+        'Mengancam keselamatan jiwa',
+        'Menguasai dengan kekerasan fisik'
+      ],
+      answer: 1, difficulty: 'mudah',
+      explanation: 'Dalam konteks kalimat tersebut, "membelenggu" bersifat metaforis — bukan makna harfiah (mengikat dengan rantai). Maknanya adalah membatasi, mengekang, dan menghalangi kebebasan bangsa Indonesia.'
+    },
+  ],
+  'litbingg': [
+    {
+      passage: '"Scientists have discovered that sleep plays a crucial role in memory consolidation. During sleep, the brain processes and stores information gathered throughout the day, transferring it from short-term to long-term memory. Studies show that people who sleep well after learning new material retain significantly more information than those who remain awake."',
+      text: 'According to the passage, what happens to information during sleep?',
+      options: [
+        'It is permanently deleted from the brain',
+        'It is transferred from long-term to short-term memory',
+        'It is processed and moved to long-term memory',
+        'It is only stored in short-term memory',
+        'It is sent to different parts of the body'
+      ],
+      answer: 2, difficulty: 'mudah',
+      explanation: 'The passage explicitly states: "transferring it from short-term to long-term memory." This directly answers the question — during sleep, information is processed and moved (transferred) to long-term memory storage.'
+    },
+    {
+      passage: '"The term \'digital divide\' refers to the gap between individuals who have access to modern information technology and those who do not. This disparity exists not only between developing and developed nations but also within countries, particularly between urban and rural populations."',
+      text: 'The word "disparity" in the passage is closest in meaning to...',
+      options: [
+        'similarity','agreement','inequality','connection','misunderstanding'
+      ],
+      answer: 2, difficulty: 'sedang',
+      explanation: '"Disparity" means a notable difference or inequality. In context, it refers to the unequal access to technology between different groups. "Inequality" is the closest synonym.'
+    },
+    {
+      passage: '"Renewable energy sources, such as solar and wind power, have seen dramatic cost reductions over the past decade. However, the intermittent nature of these sources—the sun does not always shine and the wind does not always blow—poses significant challenges for grid reliability."',
+      text: 'What is the main purpose of mentioning "the sun does not always shine and the wind does not always blow"?',
+      options: [
+        'To explain why renewable energy is expensive',
+        'To illustrate the intermittent nature of renewable sources',
+        'To argue that fossil fuels are more reliable',
+        'To show that renewable energy cannot replace traditional energy',
+        'To describe weather patterns affecting energy production'
+      ],
+      answer: 1, difficulty: 'sulit',
+      explanation: 'The author uses this phrase as an example ("—") to explain what "intermittent nature" means in practical terms. It is not an argument for fossil fuels, nor about cost or replacement — it\'s purely illustrative of the intermittency concept.'
+    },
+  ],
+  'penmat': [
+    {
+      text: 'Sebuah tangki berbentuk silinder memiliki jari-jari 5 meter dan tinggi 10 meter. Jika air diisi dengan kecepatan 2π m³ per menit, berapa menit yang dibutuhkan untuk mengisi penuh tangki tersebut? (π ≈ 22/7)',
+      options: ['100 menit','110 menit','115 menit','120 menit','125 menit'],
+      answer: 3, difficulty: 'sulit',
+      explanation: 'Volume silinder = π × r² × t = π × 25 × 10 = 250π m³. Waktu = 250π / 2π = 125 menit.'
+    },
+    {
+      text: 'Grafik fungsi f(x) = x² − 4x + 3 memotong sumbu x di titik-titik...',
+      options: ['x = 1 dan x = 3','x = −1 dan x = −3','x = 1 dan x = −3','x = −1 dan x = 3','x = 2 dan x = 3'],
+      answer: 0, difficulty: 'sedang',
+      explanation: 'Faktorkan: x² − 4x + 3 = (x − 1)(x − 3) = 0. Sehingga x = 1 atau x = 3. Titik potong sumbu x: (1, 0) dan (3, 0).'
+    },
+    {
+      text: 'Dalam sebuah kelas, 60% siswa suka matematika, 70% siswa suka fisika. Jika 20% siswa tidak suka keduanya, berapa persen siswa yang suka KEDUANYA?',
+      options: ['30%','40%','50%','60%','70%'],
+      answer: 2, difficulty: 'sulit',
+      explanation: 'Gunakan rumus himpunan: |M ∪ F| = 100% − 20% = 80%. |M ∪ F| = |M| + |F| − |M ∩ F|. 80 = 60 + 70 − |M ∩ F|. |M ∩ F| = 130 − 80 = 50%.'
+    },
+  ],
+};
+
+const FLASHCARDS = {
+  'tps-pu': [
+    { q: 'Apa yang dimaksud dengan silogisme?', a: 'Silogisme adalah bentuk penalaran deduktif yang terdiri dari dua premis dan satu kesimpulan. Contoh: Semua manusia fana (premis mayor), Socrates manusia (premis minor), maka Socrates fana (kesimpulan).' },
+    { q: 'Apa perbedaan penalaran induktif dan deduktif?', a: 'Induktif: dari fakta khusus → kesimpulan umum (generalisasi). Deduktif: dari prinsip umum → kesimpulan khusus. Penalaran induktif bersifat probabilistik, sedangkan deduktif bersifat pasti (jika premis benar).' },
+    { q: 'Apa itu analogi dalam penalaran?', a: 'Analogi adalah penalaran berdasarkan kesamaan/kemiripan antara dua hal. Jika A memiliki sifat X dan B mirip dengan A, maka B mungkin juga memiliki sifat X. Digunakan untuk prediksi atau pemecahan masalah.' },
+    { q: 'Apa itu argumen valid vs argumen kuat?', a: 'Valid: struktur logika benar (jika premis benar → kesimpulan pasti benar). Kuat: argumen induktif dengan premis yang membuat kesimpulan sangat mungkin benar. Valid bukan berarti kesimpulannya benar di dunia nyata.' },
+    { q: 'Apa kesalahan logika (fallacy) yang umum dalam TPS?', a: 'Beberapa fallacy umum: (1) Ad hominem — menyerang orangnya bukan argumennya, (2) Generalisasi terburu-buru — kesimpulan terlalu luas dari data sedikit, (3) False dilemma — hanya menyajikan dua pilihan padahal ada lebih banyak.' },
+  ],
+  'penmat': [
+    { q: 'Rumus luas dan keliling lingkaran', a: 'Luas = π × r²\nKeliling = 2 × π × r = π × d\nDimana r = jari-jari, d = diameter, π ≈ 3,14 atau 22/7' },
+    { q: 'Rumus kuadrat (abc) untuk persamaan kuadrat', a: 'Untuk ax² + bx + c = 0:\nx = (−b ± √(b²−4ac)) / 2a\nDiskriminan D = b²−4ac:\n• D>0: dua akar real berbeda\n• D=0: dua akar real sama\n• D<0: tidak ada akar real' },
+    { q: 'Aturan eksponen penting', a: 'a^m × a^n = a^(m+n)\na^m ÷ a^n = a^(m−n)\n(a^m)^n = a^(mn)\na^0 = 1\na^(−n) = 1/a^n\na^(1/n) = ⁿ√a' },
+    { q: 'Rumus aritmetika dan geometri barisan', a: 'Aritmetika: Un = a + (n−1)d | Sn = n/2 × (2a + (n−1)d)\nGeometri: Un = a × r^(n−1) | Sn = a(rⁿ−1)/(r−1)\nDimana a=suku pertama, d=beda, r=rasio' },
+    { q: 'Konsep peluang dasar', a: 'P(A) = n(A) / n(S)\nP(A∪B) = P(A) + P(B) − P(A∩B)\nP(A∩B) = P(A) × P(B) jika A dan B saling bebas\nP(A|B) = P(A∩B) / P(B) untuk peluang bersyarat' },
+  ],
+  'litbingg': [
+    { q: 'What is the difference between "affect" and "effect"?', a: '"Affect" is usually a VERB meaning to influence something. "Effect" is usually a NOUN meaning the result or outcome.\nExample: "The rain affected the game" (verb). "The rain had a negative effect on the game" (noun).' },
+    { q: 'Common transition words for contrast', a: 'However, Nevertheless, Nonetheless, On the other hand, In contrast, Despite/Although, Yet, Even though, While, Whereas\n→ These signal that the next idea contradicts or qualifies the previous one.' },
+    { q: 'How to identify the main idea of a passage?', a: '1. Look at the first and last sentences of each paragraph\n2. Ask: "What is this whole passage mostly about?"\n3. The main idea is broad enough to cover all details\n4. It is NOT a specific detail or example\n5. Watch for topic sentences that state the main point directly.' },
+    { q: 'What does "implicit" vs "explicit" mean in reading?', a: 'Explicit: directly stated in the text — you can point to it.\nImplicit: suggested or implied — you must infer it from clues.\nUTBK often tests implicit understanding: "What can be inferred?" or "What does the author imply?"' },
+  ],
+  'litbindo': [
+    { q: 'Apa perbedaan fakta dan opini?', a: 'Fakta: pernyataan yang dapat dibuktikan kebenarannya secara objektif. Contoh: "Jakarta adalah ibu kota Indonesia."\nOpini: pendapat atau penilaian subjektif. Sering ditandai kata: menurut, saya rasa, sepertinya, seharusnya, terbaik, dll.' },
+    { q: 'Struktur teks argumentasi', a: '1. Tesis/Pendapat utama — posisi penulis\n2. Argumen/Bukti — alasan dan data pendukung\n3. Sanggahan/Rebuttal (opsional) — membantah argumen lawan\n4. Penutup/Penegasan ulang — kesimpulan dan penegasan kembali tesis' },
+    { q: 'Unsur intrinsik karya sastra', a: '• Tema: ide/gagasan pokok cerita\n• Alur/Plot: rangkaian peristiwa\n• Tokoh & Penokohan: karakter dan sifatnya\n• Latar: waktu, tempat, suasana\n• Sudut pandang: cara penulis bercerita\n• Amanat: pesan moral cerita' },
+  ],
+  'tps-pbm': [
+    { q: 'Apa ciri-ciri paragraf induktif vs deduktif?', a: 'Deduktif: kalimat utama di AWAL paragraf, diikuti kalimat penjelas.\nInduktif: kalimat utama di AKHIR paragraf, dimulai dari fakta/detail khusus.\nCampuran (deduktif-induktif): kalimat utama di awal DAN akhir (pengulangan/penguatan).' },
+    { q: 'Jenis-jenis konjungsi yang sering diuji', a: 'Kausal: karena, sebab, oleh karena itu\nAkibat: sehingga, maka, akibatnya\nPertentangan: tetapi, namun, meskipun, walaupun\nPenambahan: dan, serta, bahkan, juga\nTujuan: agar, supaya, untuk\nSyarat: jika, apabila, asalkan' },
+  ],
+  'tps-pk': [
+    { q: 'Rumus persentase dan proporsi dasar', a: 'Persentase: (bagian / keseluruhan) × 100%\nKenaikan %: ((baru−lama)/lama) × 100%\nPenurunan %: ((lama−baru)/lama) × 100%\nDiskon: harga baru = harga asal × (1 − diskon%)' },
+    { q: 'Konsep rata-rata, median, dan modus', a: 'Rata-rata (mean): jumlah data / banyak data\nMedian: nilai tengah data setelah diurutkan\nModus: nilai yang paling sering muncul\nJika data genap, median = rata-rata dua data tengah' },
+  ],
+};
+
+const BADGES = [
+  { icon: '⭐', name: 'Pemula Semangat', desc: 'Kerjakan 10 soal pertama', unlocked: true },
+  { icon: '🎯', name: 'On Target', desc: 'Skor 80%+ dalam satu sesi', unlocked: true },
+  { icon: '🔥', name: 'Streak 7 Hari', desc: 'Belajar 7 hari berturut-turut', unlocked: true },
+  { icon: '🧠', name: 'Master TPS', desc: 'Selesaikan semua soal TPS', unlocked: false },
+  { icon: '📚', name: '100 Soal', desc: 'Kerjakan 100 soal', unlocked: false },
+  { icon: '🌐', name: 'English Pro', desc: 'Skor 90%+ Literasi Inggris', unlocked: false },
+  { icon: '📐', name: 'Math Wizard', desc: 'Selesaikan semua soal Matematika', unlocked: false },
+  { icon: '🏆', name: 'Top Performer', desc: 'Masuk 3 besar leaderboard', unlocked: false },
+];
+
+const HISTORY = [
+  { cat: 'Penalaran Umum', icon: '🧠', score: 85, soal: 10, date: 'Hari ini, 09:30', pts: 120 },
+  { cat: 'Literasi Bahasa Indonesia', icon: '🇮🇩', score: 90, soal: 8, date: 'Kemarin, 20:15', pts: 100 },
+  { cat: 'Penalaran Matematika', icon: '📐', score: 45, soal: 10, date: 'Kemarin, 18:00', pts: 60 },
+  { cat: 'Literasi Bahasa Inggris', icon: '🌐', score: 60, soal: 10, date: '2 hari lalu', pts: 80 },
+];
+
+// ══════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════
+let currentPage = 'home';
+let currentCategory = '';
+let questions = [];
+let currentQ = 0;
+let score = 0;
+let answered = false;
+let bookmarked = new Set();
+let masteredCards = new Set();
+let timerInterval = null;
+let elapsed = 0;
+let totalPoints = 1240;
+let flashCat = 'tps-pu';
+let currentFlashIdx = 0;
+let flashIsFlipped = false;
+
+// ══════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const el = document.getElementById('page-' + page);
+  if (el) el.classList.add('active');
+  const navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
+  currentPage = page;
+  window.scrollTo(0, 0);
+
+  if (page === 'latihan') renderLatihanSelect();
+  if (page === 'flashcard') renderFlashcard();
+  if (page === 'progress') renderProgress();
+}
+
+// ══════════════════════════════════════
+//  LATIHAN SELECT
+// ══════════════════════════════════════
+function renderLatihanSelect() {
+  const grid = document.getElementById('latihan-cats');
+  const diffMap = { 'tps-pu':'sedang','tps-pbm':'mudah','tps-pk':'sedang','litbindo':'mudah','litbingg':'sulit','penmat':'sulit' };
+  const colorMap = { 'tps-pu':'blue','tps-pbm':'sky','tps-pk':'cyan','litbindo':'violet','litbingg':'emerald','penmat':'rose' };
+  const countMap = { 'tps-pu':420,'tps-pbm':380,'tps-pk':360,'litbindo':310,'litbingg':290,'penmat':340 };
+  const progMap = { 'tps-pu':62,'tps-pbm':45,'tps-pk':38,'litbindo':70,'litbingg':28,'penmat':22 };
+  grid.innerHTML = Object.entries(CATEGORIES).map(([id, cat]) => `
+    <div class="cat-card" data-color="${colorMap[id]}" onclick="startQuiz('${id}')">
+      <div class="cat-icon">${cat.icon}</div>
+      <div class="cat-name">${cat.name}</div>
+      <div class="cat-meta">
+        <div class="cat-count">📄 ${countMap[id]} soal</div>
+        <div class="cat-diff diff-${diffMap[id]}">${diffMap[id].charAt(0).toUpperCase()+diffMap[id].slice(1)}</div>
+      </div>
+      <div class="cat-progress-wrap"><div class="cat-progress-bar" style="width:${progMap[id]}%"></div></div>
+    </div>
+  `).join('');
+  document.getElementById('latihan-select-screen').style.display = 'block';
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+}
+
+// ══════════════════════════════════════
+//  QUIZ
+// ══════════════════════════════════════
+function startQuiz(cat) {
+  showPage('latihan');
+  currentCategory = cat;
+  const pool = [...(QUESTION_BANK[cat] || [])];
+  // Shuffle
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  questions = pool.slice(0, Math.min(10, pool.length));
+  if (questions.length === 0) { showToast('⚠️ Soal belum tersedia untuk kategori ini'); return; }
+  currentQ = 0; score = 0; answered = false; elapsed = 0;
+
+  document.getElementById('latihan-select-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  document.getElementById('result-screen').style.display = 'none';
+
+  const catInfo = CATEGORIES[cat];
+  document.getElementById('quiz-cat-label').textContent = catInfo ? catInfo.short : cat;
+  document.getElementById('quiz-mode-label').textContent = 'Mode Latihan';
+
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    elapsed++;
+    const m = String(Math.floor(elapsed/60)).padStart(2,'0');
+    const s = String(elapsed%60).padStart(2,'0');
+    const timerEl = document.getElementById('quiz-timer');
+    timerEl.textContent = `⏱ ${m}:${s}`;
+    timerEl.className = 'quiz-timer' + (elapsed > 300 ? ' warning' : '');
+  }, 1000);
+
+  renderQuestion();
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = questions[currentQ];
+  const total = questions.length;
+
+  document.getElementById('q-counter').textContent = `${currentQ+1} / ${total}`;
+  document.getElementById('q-progress-fill').style.width = `${((currentQ+1)/total)*100}%`;
+
+  const diffEl = document.getElementById('q-difficulty');
+  const diffColors = { mudah: 'diff-mudah', sedang: 'diff-sedang', sulit: 'diff-sulit' };
+  const diffLabels = { mudah: '🌱 Mudah', sedang: '⚡ Sedang', sulit: '🔥 Sulit' };
+  diffEl.className = 'question-difficulty-badge ' + (diffColors[q.difficulty]||'diff-sedang');
+  diffEl.textContent = diffLabels[q.difficulty] || '⚡ Sedang';
+
+  const passageEl = document.getElementById('q-passage');
+  if (q.passage) { passageEl.style.display = 'block'; passageEl.textContent = q.passage; }
+  else { passageEl.style.display = 'none'; }
+
+  document.getElementById('q-text').textContent = q.text;
+
+  const opts = document.getElementById('q-options');
+  const labels = ['A','B','C','D','E'];
+  opts.innerHTML = q.options.map((opt, i) => `
+    <button class="option-btn" onclick="selectOption(${i})" id="opt-${i}">
+      <div class="option-label">${labels[i]}</div>
+      <div class="option-text">${opt}</div>
+    </button>
+  `).join('');
+
+  document.getElementById('explanation-card').style.display = 'none';
+  document.getElementById('btn-next').disabled = true;
+  document.getElementById('btn-bookmark').className = 'btn-bookmark' + (bookmarked.has(currentQ) ? ' bookmarked' : '');
+}
+
+function selectOption(idx) {
+  if (answered) return;
+  answered = true;
+  const q = questions[currentQ];
+  const labels = ['A','B','C','D','E'];
+
+  q.options.forEach((_, i) => {
+    const btn = document.getElementById('opt-'+i);
+    btn.disabled = true;
+    if (i === q.answer) btn.className = 'option-btn correct';
+    else if (i === idx && idx !== q.answer) btn.className = 'option-btn wrong';
+  });
+
+  if (idx === q.answer) { score++; showToast('✅ Jawaban benar! +10 poin'); addPoints(10); }
+  else { showToast('❌ Kurang tepat. Pelajari pembahasannya!'); }
+
+  const expCard = document.getElementById('explanation-card');
+  expCard.style.display = 'block';
+  document.getElementById('explanation-text').textContent = q.explanation;
+
+  document.getElementById('btn-next').disabled = false;
+}
+
+function nextQuestion() {
+  if (!answered) return;
+  currentQ++;
+  if (currentQ >= questions.length) { endQuiz(); return; }
+  renderQuestion();
+}
+
+function endQuiz() {
+  clearInterval(timerInterval);
+  const total = questions.length;
+  const pct = Math.round((score/total)*100);
+  const mins = Math.floor(elapsed/60);
+  const secs = elapsed % 60;
+
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+
+  document.getElementById('r-correct').textContent = score;
+  document.getElementById('r-wrong').textContent = total - score;
+  document.getElementById('r-time').textContent = `${mins}m${secs}s`;
+  document.getElementById('result-pct').textContent = pct + '%';
+
+  // Animate ring
+  const circle = document.getElementById('result-circle');
+  const circumference = 2 * Math.PI * 58;
+  const offset = circumference - (pct/100) * circumference;
+  setTimeout(() => { circle.style.strokeDashoffset = offset; circle.style.transition = 'stroke-dashoffset 1.2s ease'; }, 200);
+
+  let title = ''; let sub = '';
+  if (pct >= 85) { title = 'Luar Biasa! 🎉'; sub = 'Penguasaanmu sangat baik di materi ini!'; }
+  else if (pct >= 65) { title = 'Kerja Bagus! 👍'; sub = 'Terus latihan untuk meningkatkan skormu.'; }
+  else { title = 'Jangan Menyerah! 💪'; sub = 'Review pembahasannya dan coba lagi ya!'; }
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-sub').textContent = sub;
+
+  const pts = score * 10 + (pct >= 80 ? 50 : 0);
+  addPoints(pts);
+
+  // Show badge if earned
+  const badgeEl = document.getElementById('badge-earned');
+  if (pct >= 80) {
+    badgeEl.style.display = 'flex';
+    document.getElementById('badge-icon').textContent = '🎯';
+    document.getElementById('badge-name').textContent = 'On Target!';
+    document.getElementById('badge-desc').textContent = `Skor ${pct}% — Kamu mendapatkan +${pts} poin bonus!`;
+  } else { badgeEl.style.display = 'none'; }
+
+  HISTORY.unshift({ cat: CATEGORIES[currentCategory]?.name || currentCategory, icon: CATEGORIES[currentCategory]?.icon || '📝', score: pct, soal: total, date: 'Baru saja', pts });
+}
+
+function toggleBookmark() {
+  const btn = document.getElementById('btn-bookmark');
+  if (bookmarked.has(currentQ)) { bookmarked.delete(currentQ); btn.className = 'btn-bookmark'; showToast('🔖 Bookmark dihapus'); }
+  else { bookmarked.add(currentQ); btn.className = 'btn-bookmark bookmarked'; showToast('🔖 Soal dibookmark!'); }
+}
+
+function confirmQuit() {
+  document.getElementById('quit-modal').classList.add('show');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+}
+function quitQuiz() {
+  clearInterval(timerInterval);
+  closeModal('quit-modal');
+  showPage('latihan');
+}
+
+// ══════════════════════════════════════
+//  FLASHCARD
+// ══════════════════════════════════════
+function renderFlashcard() {
+  const cats = document.getElementById('flash-cats');
+  cats.innerHTML = Object.entries(CATEGORIES).map(([id, c]) =>
+    `<button class="flash-cat-btn ${id===flashCat?'active':''}" onclick="setFlashCat('${id}')">${c.icon} ${c.name.split(' ').slice(0,2).join(' ')}</button>`
+  ).join('');
+  loadFlashCards();
+}
+
+function setFlashCat(cat) {
+  flashCat = cat; currentFlashIdx = 0; flashIsFlipped = false;
+  renderFlashcard();
+}
+
+function loadFlashCards() {
+  const cards = FLASHCARDS[flashCat] || [];
+  document.getElementById('flash-cat-label-mini').textContent = CATEGORIES[flashCat]?.name || flashCat;
+
+  // Update active button
+  document.querySelectorAll('.flash-cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.flash-cat-btn').forEach(b => {
+    if (b.textContent.includes(CATEGORIES[flashCat]?.icon)) b.classList.add('active');
+  });
+
+  if (cards.length === 0) {
+    document.getElementById('flash-front-text').textContent = 'Flashcard belum tersedia';
+    document.getElementById('flash-back-text').textContent = '-';
+    return;
+  }
+
+  renderFlashCard(currentFlashIdx);
+
+  // Grid
+  const grid = document.getElementById('flash-grid');
+  const tagColors = { 'tps-pu':'chip-blue','tps-pbm':'chip-blue','tps-pk':'chip-blue','litbindo':'chip-blue','litbingg':'chip-green','penmat':'chip-blue' };
+  grid.innerHTML = cards.map((c, i) => `
+    <div class="flash-mini-card ${masteredCards.has(flashCat+':'+i)?'mastered':''}" onclick="jumpFlash(${i})">
+      <div class="flash-mini-mastered-badge">✓</div>
+      <div class="flash-mini-q">${c.q}</div>
+      <div class="flash-mini-tag ${tagColors[flashCat]||'chip-blue'}">${CATEGORIES[flashCat]?.short || flashCat}</div>
+    </div>
+  `).join('');
+}
+
+function renderFlashCard(idx) {
+  const cards = FLASHCARDS[flashCat] || [];
+  if (!cards[idx]) return;
+  flashIsFlipped = false;
+  document.getElementById('flash-card').classList.remove('flipped');
+  document.getElementById('flash-front-text').textContent = cards[idx].q;
+  document.getElementById('flash-back-text').textContent = cards[idx].a;
+  document.getElementById('flash-counter').textContent = `${idx+1} / ${cards.length}`;
+  const mastKey = flashCat+':'+idx;
+  const btn = document.getElementById('btn-mastered');
+  btn.className = 'btn-mastered' + (masteredCards.has(mastKey) ? ' done' : '');
+  btn.textContent = masteredCards.has(mastKey) ? '✓ Sudah Hafal' : '✓ Tandai Hafal';
+}
+
+function flipCard() {
+  flashIsFlipped = !flashIsFlipped;
+  document.getElementById('flash-card').classList.toggle('flipped', flashIsFlipped);
+}
+function nextFlash() {
+  const cards = FLASHCARDS[flashCat] || [];
+  currentFlashIdx = (currentFlashIdx + 1) % cards.length;
+  renderFlashCard(currentFlashIdx);
+}
+function prevFlash() {
+  const cards = FLASHCARDS[flashCat] || [];
+  currentFlashIdx = (currentFlashIdx - 1 + cards.length) % cards.length;
+  renderFlashCard(currentFlashIdx);
+}
+function jumpFlash(idx) {
+  currentFlashIdx = idx;
+  renderFlashCard(idx);
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+function toggleMastered() {
+  const key = flashCat + ':' + currentFlashIdx;
+  if (masteredCards.has(key)) { masteredCards.delete(key); showToast('🔄 Kartu ditandai untuk review ulang'); }
+  else { masteredCards.add(key); showToast('✅ Kartu ditandai sebagai hafal! +5 poin'); addPoints(5); }
+  renderFlashCard(currentFlashIdx);
+  loadFlashCards();
+}
+function reviewCard() { showToast('🔁 Kartu ditambahkan ke antrian review'); }
+
+// ══════════════════════════════════════
+//  PROGRESS
+// ══════════════════════════════════════
+function renderProgress() {
+  // Subject bars
+  const bars = [
+    { name: 'Literasi Bahasa Indonesia', pct: 70, color: '#7c3aed' },
+    { name: 'Penalaran Umum', pct: 62, color: '#2563eb' },
+    { name: 'Pemahaman Bacaan & Menulis', pct: 45, color: '#0ea5e9' },
+    { name: 'Pengetahuan Kuantitatif', pct: 38, color: '#06b6d4' },
+    { name: 'Literasi Bahasa Inggris', pct: 28, color: '#10b981' },
+    { name: 'Penalaran Matematika', pct: 22, color: '#f43f5e' },
+  ];
+  document.getElementById('subject-bars').innerHTML = bars.map(b => `
+    <div class="subject-bar-row">
+      <div class="subject-bar-header">
+        <div class="subject-bar-name">${b.name}</div>
+        <div class="subject-bar-pct">${b.pct}%</div>
+      </div>
+      <div class="subject-bar-track"><div class="subject-bar-fill" style="width:${b.pct}%;background:linear-gradient(90deg,${b.color},${b.color}88)"></div></div>
+    </div>
+  `).join('');
+
+  // Badges
+  document.getElementById('badges-grid').innerHTML = BADGES.map(b => `
+    <div class="badge-card ${b.unlocked?'':'locked'}">
+      <div class="badge-card-icon">${b.icon}</div>
+      <div class="badge-card-name">${b.name}</div>
+      <div class="badge-card-desc">${b.desc}</div>
+    </div>
+  `).join('');
+
+  // History
+  document.getElementById('history-list').innerHTML = HISTORY.slice(0,5).map(h => {
+    const cls = h.score >= 75 ? 'high' : h.score >= 55 ? 'mid' : 'low';
+    return `
+    <div class="history-item">
+      <div class="history-icon">${h.icon}</div>
+      <div class="history-info">
+        <div class="history-subject">${h.cat}</div>
+        <div class="history-meta">${h.soal} soal · ${h.date} · +${h.pts} pts</div>
+      </div>
+      <div class="history-score ${cls}">${h.score}%</div>
+    </div>
+  `}).join('');
+}
+
+// ══════════════════════════════════════
+//  UTILS
+// ══════════════════════════════════════
+function addPoints(n) {
+  totalPoints += n;
+  document.getElementById('total-points').textContent = totalPoints.toLocaleString();
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  const icon = msg.startsWith('✅') ? '✅' : msg.startsWith('❌') ? '❌' : msg.startsWith('🔖') ? '🔖' : '🎉';
+  document.getElementById('toast-icon').textContent = icon;
+  document.getElementById('toast-msg').textContent = msg.replace(/^[^\w\s]*\s/, '');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ══════════════════════════════════════
+//  MUSIC PLAYER
+// ══════════════════════════════════════
+let ytPlayer = null;
+let musicPlaying = false;
+const MUSIC_VIDEO_ID = '5Uza53g3Cgg';
+
+// Load YouTube IFrame API
+const ytScript = document.createElement('script');
+ytScript.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(ytScript);
+
+window.onYouTubeIframeAPIReady = function() {
+  ytPlayer = new YT.Player('yt-player', {
+    height: '1', width: '1',
+    videoId: MUSIC_VIDEO_ID,
+    playerVars: {
+      autoplay: 0,
+      controls: 0,
+      loop: 1,
+      playlist: MUSIC_VIDEO_ID,
+      playsinline: 1,
+    },
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+    }
+  });
+};
+
+function onPlayerReady(e) {
+  e.target.setVolume(40);
+  // Try to get video title
+  try {
+    const title = e.target.getVideoData().title;
+    if (title) document.getElementById('music-title').textContent = title;
+  } catch(_) {}
+}
+
+function onPlayerStateChange(e) {
+  if (e.data === YT.PlayerState.PLAYING) {
+    musicPlaying = true;
+    document.getElementById('music-toggle').textContent = '⏸';
+    document.getElementById('music-pulse').style.display = 'block';
+    document.getElementById('music-art').style.borderRadius = '50%';
+    document.getElementById('music-art').style.animation = 'mspin 4s linear infinite';
+    // Update title
+    try {
+      const title = ytPlayer.getVideoData().title;
+      if (title) document.getElementById('music-title').textContent = title;
+    } catch(_) {}
+  } else {
+    musicPlaying = false;
+    document.getElementById('music-toggle').textContent = '▶';
+    document.getElementById('music-pulse').style.display = 'none';
+    document.getElementById('music-art').style.borderRadius = '10px';
+    document.getElementById('music-art').style.animation = 'none';
+  }
+}
+
+function toggleMusic() {
+  if (!ytPlayer) return;
+  if (musicPlaying) {
+    ytPlayer.pauseVideo();
+  } else {
+    ytPlayer.playVideo();
+  }
+}
+
+function closePlayer() {
+  if (ytPlayer && musicPlaying) ytPlayer.pauseVideo();
+  document.getElementById('music-player').style.display = 'none';
+  document.getElementById('music-reopen').style.display = 'flex';
+  document.getElementById('music-reopen').style.alignItems = 'center';
+  document.getElementById('music-reopen').style.justifyContent = 'center';
+}
+
+function reopenPlayer() {
+  document.getElementById('music-player').style.display = 'flex';
+  document.getElementById('music-reopen').style.display = 'none';
+}
+
+// ══════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════
+window.addEventListener('load', () => {
+  showPage('home');
+  setTimeout(() => {
+    document.querySelectorAll('.subject-bar-fill').forEach(el => {
+      const w = el.style.width;
+      el.style.width = '0';
+      setTimeout(() => el.style.width = w, 100);
+    });
+  }, 200);
+});
+</script>
+</body>
+</html>
